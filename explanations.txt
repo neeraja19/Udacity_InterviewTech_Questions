@@ -1,0 +1,47 @@
+Question1-Solution:
+The question1 function iterates through substrings of s with length len(t) and performs the anagram test until an anagram
+is found, in which case the function returns true. if the function reaches the end of s without finding an anagram,
+it returns false.This implementation does a number of computations for every element of s. The runtime is O(len(s)).
+The space complexity is O(1) because we are storing s and t
+
+Question2-Solution:
+Given a string a, find the longest palindromic substring contained in a
+function question2 iterates every substring of a, and checkes if each substring is 
+Used lpals variable to store palindromic substrings which will be updates each time if finds a longer palindrome.
+The algorithm produce each time substring of a with nested loop which loops go through the whole string for each letter.
+Therefore the runtime can be simplified to O(n^2),the auxiliary sapce is O(1)
+
+Qestion3-Solution:
+Given an undirected graph G, find the minimum spanning tree within G.
+ Aminimum spanning tree connects all vertices in a graph with the smallest possible total weight of edges. 
+This is very hardest technical problem. I had spent lot of time to do this.
+I did went through too many resources for research.
+I followed Kruskal's algorithm to solve this problem. The idea is to sort the edges by its weight and start the edge
+ without causing cycle in the graph. We need to make sure no cycle in the graph is keep track of each vertice in list 
+of sets. if new edge connect two vertices within same set,should not include.
+Otherwise include set and take union of the set. First, List of edges take time O(E) and space is O(E)
+secondly, sort edges by weight take time O(Elog(E)) and space is O(E)
+and third is loop through each edges, and find the indices, merge sets take in worst scenario take time O(E*V) 
+and space is O(V) Finally we need to conver the edges back to required output graph this take time O(E) and sapce O(V)
+Completely the algorithm take time O(E*V) and sapce us O(E)
+
+Question4_Solution:
+Find the least common ancestor between two nodes on a binary search tree
+The LCA is the farthest node from the root that is an ancestor of both nodes.
+I can say the example is the root is a common ancestor of all nodes on the tree.
+bst i as a series of nodes with values and left/right nodes which are initialized to None.Then bst is created node objects,
+assigning left and right values.From begining root the question4 function checks each node to see whether it has higher or
+lower then both input nodes.If the value is higher than both then the question4 function proceeds to left node.
+if the value lower than proceeds to right node.If the node value is between the node1 and node2 values then that one is
+the LCA of node1 and node2. This algorithm visits one node per level of the tree. So the time complexity is O(log(n)) 
+the complexity is O(n).
+
+Question5_Solution:
+Find the element in a singly linked list that is the m elements from the end
+The function findlength is helper iteres through linked list.
+increasing the counter until curent node reaches no next value and returns the counter.
+Iterates question5 function through the linked list and increases the counter until reaches the counter value 
+lengthlist - m - 1 and returns current node.
+The question5 function interates through linked list so time complexity is O(n), store the current node and the counter
+value given at any time, so the space complexity is O(1)
+
